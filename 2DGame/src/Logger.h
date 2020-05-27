@@ -15,7 +15,7 @@ private:
 	HANDLE _HConsole;
 public:
 	Logger(std::string fileName)
-		: _Filename(fileName), _HConsole(GetStdHandle(STD_OUTPUT_HANDLE)) {};
+		: _Filename(fileName), _HConsole(GetStdHandle(STD_OUTPUT_HANDLE)) {}; // Initialize filename and console handle
 
 	void Inf(std::string message);
 	void War(std::string message);

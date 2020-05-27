@@ -4,10 +4,11 @@
 
 #include <SDL.h>
 
+// Defines a function that can take mandatory 1 argument and minimum of 1 extra argument
 template<typename T, typename... Args>
 void cleanup(T* t, Args&&... args) {
-	cleanup(t);
-	cleanup(std::forward<Args>(args)...);
+	cleanup(t); // run the cleanup function for the first argument
+	cleanup(std::forward<Args>(args)...); // pass the remaining arguments back into cleanup
 }
 
 template<>

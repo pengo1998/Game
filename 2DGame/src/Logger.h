@@ -1,5 +1,4 @@
-#pragma once
-
+#pragma once // Only include Random thing ONE TIME so it doesnt keep going like a nerd
 #include <iostream>
 #include <string>
 #include <fstream>
@@ -8,17 +7,10 @@
 
 class Logger
 {
-private:
-	void WriteToFile(std::string message);
-
-	std::string _Filename;
-	HANDLE _HConsole;
 public:
-	Logger(std::string fileName)
-		: _Filename(fileName), _HConsole(GetStdHandle(STD_OUTPUT_HANDLE)) {}; // Initialize filename and console handle
-
-	void Inf(std::string message);
-	void War(std::string message);
-	void Err(std::string message);
+	static void Init();
+	static void Inf(std::string message);
+	static void War(std::string message);
+	static void Err(std::string message);
 };
 
